@@ -4,15 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="http://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script defer src="script.js"></script>
 </head>
 <body>
     <h1>SOCKET.IO SAMPLE</h1>
     <br>
-    <input id="inpMsg">
-    <button id="btnSend">SEND</button>
+    <div id="loginBox">
 
-    <ul id="ulMsgList"></ul>
+        <input id="inpUsername">
+        <button id="btnStart">START</button>
+
+    </div>
+    
+    <div id="chatBox">
+
+        <input id="inpNewMsg">
+        <button id="btnSendMsg">SEND</button>
+        <ul id="ulMsgs">
+            
+        </ul>
+
+    </div>
+
+
+
 </body>
 </html>
