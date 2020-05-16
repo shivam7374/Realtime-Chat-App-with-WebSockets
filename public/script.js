@@ -9,3 +9,9 @@ btnSend.onclick=()=>{
     })
     inpMsg.value
 }
+
+socket.on('msg_rcvd',(data)=>{
+    let liNewMsg=document.createElement('li')
+    liNewMsg.innerText=data.msg
+    ulMsgList.append(liNewMsg)
+})

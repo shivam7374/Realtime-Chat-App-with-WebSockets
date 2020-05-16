@@ -13,6 +13,9 @@ io.on('connection',(socket)=>{
   
     socket.on('msg_send',(data)=>{ // data is msg:inpMsg here
         console.log('Recieved Message ',data.msg)
+        io.emit('msg_rcvd',data) // here if we use socket.emit 
+        //then the msg would only reach us and not to other people connected to site
+        // io is collection of all sockets and sockets is one to one connection
     })
 
 
