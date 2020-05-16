@@ -10,13 +10,11 @@ const io=socketio(server)// to work with socket on server named server
 
 io.on('connection',(socket)=>{
     console.log('Connected with socket id = ',socket.id)
-    socket.on('boom',()=>{ // when boom event happens run console
-        console.log('Boom recieved from ',socket.id)
+  
+    socket.on('msg_send',(data)=>{ // data is msg:inpMsg here
+        console.log('Recieved Message ',data.msg)
     })
 
-    setInterval(()=>{
-     socket.emit('whizz')
-    },2000)
 
 })
 
