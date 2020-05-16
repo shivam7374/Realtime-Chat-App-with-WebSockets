@@ -16,6 +16,10 @@ io.on('connection',(socket)=>{
         io.emit('msg_rcvd',data) // here if we use socket.emit 
         //then the msg would only reach us and not to other people connected to site
         // io is collection of all sockets and sockets is one to one connection
+        // use io.emit when u want to others to see  the msg send including yourself
+        // use socket.emit when only u want to see message yourself
+        //********** when you want only others to see use socket.broadcast.emit */
+
     })
 
 
