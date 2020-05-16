@@ -7,13 +7,31 @@ const server=http.createServer(app)
 const io=socketio(server)// to work with socket on server named server
 // it includes a js file at path /socket.io/socket.io.js
 
+let users={
+        'arnav':'agag123'
+}
 
 io.on('connection',(socket)=>{
     console.log('Connected with socket id = ',socket.id)
   
     socket.on('login',(data)=>{
-        socket.join(data.username)
-        socket.emit('logged_in')
+        if(users[data.username])
+        {
+            if(users[data.username]==data.password)
+            {
+                socket.join(data.username)
+                socket.emit('logged_in')
+            }
+            else{
+                socket.emit('login_failed')
+            }
+        }
+        else{
+            users[data.username]=data.password
+            socket.join(data.username)
+            socket.emit('logged_in')
+        }
+        console.log(users)
     })
 
     socket.on('msg_send',(data)=>{
