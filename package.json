@@ -1,10 +1,11 @@
 {
   "name": "socketio-sample",
   "version": "1.0.0",
-  "description": "",
+  "description": "A real time Chat app with Web Sockets",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,5 +13,14 @@
     "express": "^4.17.1",
     "expresss": "0.0.0",
     "socket.io": "^2.3.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivam7374/Realtime-Chat-App-with-WebSockets.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shivam7374/Realtime-Chat-App-with-WebSockets/issues"
+  },
+  "homepage": "https://github.com/shivam7374/Realtime-Chat-App-with-WebSockets#readme"
 }
