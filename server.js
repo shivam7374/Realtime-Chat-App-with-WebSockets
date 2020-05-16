@@ -16,7 +16,16 @@ io.on('connection',(socket)=>{
         socket.emit('logged_in')
     })
 
-
+    socket.on('msg_send',(data)=>{
+        if(data.to)
+        {
+            io.to(data.to).emit('msg_rcvd',data)
+        }
+        else
+        {
+            socket.broadcast.emit('msg_rcvd',data)
+        }
+    })
 })
 
 app.use('/',express.static(__dirname+'/public'))
